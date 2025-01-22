@@ -1,0 +1,856 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\LibaanH(AZ-NAT2)> ssh centos@localhost
+centos@localhost's password:
+Last login: Wed Jan 22 15:26:04 2025 from 10.0.2.2
+[centos@vbox ~]$ sudo nano /etc/systemd/journald.conf
+[centos@vbox ~]$ [centos@vbox ~]$ sudo journald
+sudo: journald: command not found
+[centos@vbox ~]$ sudo ls | grep journal
+[centos@vbox ~]$ sudo ls | grep journal/run/log/var/log/
+[centos@vbox ~]$ sudo systemctl restart systemd-journald
+[centos@vbox ~]$ sudo ls | grep journal
+[centos@vbox ~]$ free
+               total        used        free      shared  buff/cache   available
+Mem:         1820680      356900     1410248        7920      205540     1463780
+Swap:        2097148           0     2097148
+[centos@vbox ~]$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       348Mi       1.3Gi       7.0Mi       200Mi       1.4Gi
+Swap:          2.0Gi          0B       2.0Gi
+[centos@vbox ~]$ free -h --si
+               total        used        free      shared  buff/cache   available
+Mem:            1.8G        348M        1.4G        7.0M        200M        1.4G
+Swap:           2.0G          0B        2.0G
+[centos@vbox ~]$ ps
+    PID TTY          TIME CMD
+   1858 pts/0    00:00:00 bash
+   1905 pts/0    00:00:00 ps
+[centos@vbox ~]$ ps -axu
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.9 172356 16748 ?        Ss   14:49   0:02 /usr/lib/systemd/systemd --switched-root --system --deseria
+root           2  0.0  0.0      0     0 ?        S    14:49   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   14:49   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   14:49   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   14:49   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   14:49   0:00 [netns]
+root          10  0.0  0.0      0     0 ?        I<   14:49   0:00 [kworker/0:1H-kblockd]
+root          11  0.0  0.0      0     0 ?        I<   14:49   0:00 [mm_percpu_wq]
+root          13  0.0  0.0      0     0 ?        I    14:49   0:00 [rcu_tasks_kthre]
+root          14  0.0  0.0      0     0 ?        I    14:49   0:00 [rcu_tasks_rude_]
+root          15  0.0  0.0      0     0 ?        I    14:49   0:00 [rcu_tasks_trace]
+root          16  0.0  0.0      0     0 ?        S    14:49   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    14:49   0:01 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    14:49   0:00 [migration/0]
+root          20  0.0  0.0      0     0 ?        S    14:49   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    14:49   0:00 [cpuhp/1]
+root          22  0.0  0.0      0     0 ?        S    14:49   0:00 [migration/1]
+root          23  0.0  0.0      0     0 ?        S    14:49   0:00 [ksoftirqd/1]
+root          25  0.0  0.0      0     0 ?        I<   14:49   0:00 [kworker/1:0H-events_highpri]
+root          27  0.0  0.0      0     0 ?        S    14:49   0:00 [kdevtmpfs]
+root          28  0.0  0.0      0     0 ?        I<   14:49   0:00 [inet_frag_wq]
+root          29  0.0  0.0      0     0 ?        S    14:49   0:00 [kauditd]
+root          30  0.0  0.0      0     0 ?        S    14:49   0:00 [khungtaskd]
+root          32  0.0  0.0      0     0 ?        S    14:49   0:00 [oom_reaper]
+root          33  0.0  0.0      0     0 ?        I<   14:49   0:00 [writeback]
+root          34  0.0  0.0      0     0 ?        S    14:49   0:00 [kcompactd0]
+root          35  0.0  0.0      0     0 ?        SN   14:49   0:00 [ksmd]
+root          36  0.0  0.0      0     0 ?        SN   14:49   0:00 [khugepaged]
+root          37  0.0  0.0      0     0 ?        I<   14:49   0:00 [cryptd]
+root          38  0.0  0.0      0     0 ?        I<   14:49   0:00 [kintegrityd]
+root          39  0.0  0.0      0     0 ?        I<   14:49   0:00 [kblockd]
+root          40  0.0  0.0      0     0 ?        I<   14:49   0:00 [blkcg_punt_bio]
+root          41  0.0  0.0      0     0 ?        I<   14:49   0:00 [tpm_dev_wq]
+root          42  0.0  0.0      0     0 ?        I<   14:49   0:00 [md]
+root          43  0.0  0.0      0     0 ?        I<   14:49   0:00 [edac-poller]
+root          44  0.0  0.0      0     0 ?        S    14:49   0:00 [watchdogd]
+root          45  0.0  0.0      0     0 ?        S    14:49   0:00 [kswapd0]
+root          46  0.0  0.0      0     0 ?        I    14:49   0:00 [kworker/1:1-events]
+root          52  0.0  0.0      0     0 ?        I<   14:49   0:00 [kthrotld]
+root          56  0.0  0.0      0     0 ?        I<   14:49   0:00 [acpi_thermal_pm]
+root          57  0.0  0.0      0     0 ?        I<   14:49   0:00 [kmpath_rdacd]
+root          58  0.0  0.0      0     0 ?        I<   14:49   0:00 [kaluad]
+root          59  0.0  0.0      0     0 ?        I<   14:49   0:00 [kworker/1:1H-events_highpri]
+root          60  0.0  0.0      0     0 ?        I<   14:49   0:00 [mld]
+root          61  0.0  0.0      0     0 ?        I<   14:49   0:00 [ipv6_addrconf]
+root          62  0.0  0.0      0     0 ?        I<   14:49   0:00 [kstrp]
+root          74  0.0  0.0      0     0 ?        I<   14:49   0:00 [zswap-shrink]
+root         186  0.0  0.0      0     0 ?        I<   14:49   0:00 [kworker/u5:0]
+root         376  0.0  0.0      0     0 ?        I<   14:49   0:00 [ata_sff]
+root         380  0.0  0.0      0     0 ?        S    14:49   0:00 [scsi_eh_0]
+root         381  0.0  0.0      0     0 ?        I<   14:49   0:00 [scsi_tmf_0]
+root         383  0.0  0.0      0     0 ?        S    14:49   0:00 [scsi_eh_1]
+root         384  0.0  0.0      0     0 ?        I<   14:49   0:00 [scsi_tmf_1]
+root         394  0.0  0.0      0     0 ?        S    14:49   0:00 [scsi_eh_2]
+root         396  0.0  0.0      0     0 ?        I<   14:49   0:00 [scsi_tmf_2]
+root         398  0.0  0.0      0     0 ?        S    14:49   0:00 [scsi_eh_3]
+root         401  0.0  0.0      0     0 ?        I<   14:49   0:00 [scsi_tmf_3]
+root         411  0.0  0.0      0     0 ?        I<   14:49   0:00 [kworker/0:2H-kblockd]
+root         472  0.0  0.0      0     0 ?        I<   14:49   0:00 [kdmflush/253:0]
+root         479  0.0  0.0      0     0 ?        I<   14:49   0:00 [kdmflush/253:1]
+root         497  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfsalloc]
+root         498  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs_mru_cache]
+root         499  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-buf/dm-0]
+root         500  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-conv/dm-0]
+root         501  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-reclaim/dm-]
+root         502  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-blockgc/dm-]
+root         503  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-inodegc/dm-]
+root         504  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-log/dm-0]
+root         505  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-cil/dm-0]
+root         506  0.0  0.0      0     0 ?        S    14:49   0:01 [xfsaild/dm-0]
+root         582  0.0  0.6  33792 11776 ?        Ss   14:49   0:00 /usr/lib/systemd/systemd-udevd
+root         627  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-buf/sda1]
+root         628  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-conv/sda1]
+root         631  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-reclaim/sda]
+root         634  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-blockgc/sda]
+root         635  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-inodegc/sda]
+root         636  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-log/sda1]
+root         637  0.0  0.0      0     0 ?        I<   14:49   0:00 [xfs-cil/sda1]
+root         638  0.0  0.0      0     0 ?        S    14:49   0:00 [xfsaild/sda1]
+root         644  0.0  0.0      0     0 ?        S    14:49   0:01 [irq/18-vmwgfx]
+root         645  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc0]
+root         648  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc1]
+root         650  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc2]
+root         651  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc3]
+root         652  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc4]
+root         653  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc5]
+root         654  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc6]
+root         655  0.0  0.0      0     0 ?        S    14:49   0:00 [card0-crtc7]
+root         659  0.0  0.2  18144  4412 ?        S<sl 14:49   0:00 /sbin/auditd
+root         687  0.0  2.2 127812 40320 ?        Ssl  14:49   0:00 /usr/bin/python3 -s /usr/sbin/firewalld --nofork --nopid
+root         688  0.0  0.1  79120  3616 ?        Ssl  14:49   0:00 /usr/sbin/irqbalance --foreground
+root         689  0.0  0.4 160296  8280 ?        Ssl  14:49   0:00 /usr/sbin/rsyslogd -n
+root         690  0.0  0.6  28604 11384 ?        Ss   14:49   0:00 /usr/lib/systemd/systemd-logind
+chrony       696  0.0  0.1  84456  3460 ?        S    14:49   0:00 /usr/sbin/chronyd -F 2
+dbus         698  0.0  0.2  10760  4616 ?        Ss   14:49   0:00 /usr/bin/dbus-broker-launch --scope system --audit
+dbus         700  0.0  0.1   4996  2816 ?        S    14:49   0:00 dbus-broker --log 4 --controller 9 --machine-id af13739a395
+root         702  0.1  1.1 257268 21380 ?        Ssl  14:49   0:02 /usr/sbin/NetworkManager --no-daemon
+root         712  0.0  0.6  20336 11672 ?        Ss   14:49   0:00 /usr/sbin/httpd -DFOREGROUND
+root         715  0.0  1.4 182376 26860 ?        Ss   14:49   0:00 php-fpm: master process (/etc/php-fpm.conf)
+root         718  0.0  0.5  15836  9404 ?        Ss   14:49   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         724  0.0  0.1   4724  2632 ?        Ss   14:49   0:00 /usr/sbin/atd -f
+root         725  0.0  0.2   8600  3824 ?        Ss   14:49   0:00 /usr/sbin/crond -n
+root         728  0.0  0.0   3044  1084 tty1     Ss+  14:49   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+apache       745  0.0  0.4  21616  7464 ?        S    14:49   0:00 /usr/sbin/httpd -DFOREGROUND
+apache       748  0.1  0.8 1571060 15160 ?       Sl   14:49   0:03 /usr/sbin/httpd -DFOREGROUND
+apache       751  0.1  0.6 1439924 11068 ?       Sl   14:49   0:03 /usr/sbin/httpd -DFOREGROUND
+apache       752  0.1  0.6 1439924 11068 ?       Sl   14:49   0:03 /usr/sbin/httpd -DFOREGROUND
+apache       753  0.0  0.6 184148 11920 ?        S    14:49   0:00 php-fpm: pool www
+apache       754  0.0  0.6 184148 11920 ?        S    14:49   0:00 php-fpm: pool www
+apache       755  0.0  0.6 184148 11920 ?        S    14:49   0:00 php-fpm: pool www
+apache       756  0.0  0.6 184148 11924 ?        S    14:49   0:00 php-fpm: pool www
+apache       757  0.0  0.6 184148 11924 ?        S    14:49   0:00 php-fpm: pool www
+root        1676  0.0  0.0      0     0 ?        I    15:04   0:00 [kworker/1:0-cgroup_destroy]
+root        1760  0.0  0.0      0     0 ?        I    15:19   0:00 [kworker/u4:0-flush-253:0]
+root        1776  0.0  0.0      0     0 ?        I    15:25   0:00 [kworker/0:2-ata_sff]
+root        1777  0.0  0.0      0     0 ?        R    15:25   0:00 [kworker/u4:2-events_unbound]
+root        1778  0.0  0.0      0     0 ?        I    15:25   0:00 [kworker/u4:3-xfs-blockgc/dm-0]
+root        1780  0.4  0.0      0     0 ?        I    15:25   0:01 [kworker/0:3-events]
+root        1787  0.0  0.0      0     0 ?        I    15:26   0:00 [kworker/1:2-events]
+root        1843  0.0  0.6  18828 11440 ?        Ss   15:27   0:00 sshd: centos [priv]
+centos      1848  0.0  0.7  22276 13736 ?        Ss   15:27   0:00 /usr/lib/systemd/systemd --user
+centos      1850  0.0  0.3 173544  6056 ?        S    15:27   0:00 (sd-pam)
+centos      1857  0.1  0.3  19008  7136 ?        S    15:27   0:00 sshd: centos@pts/0
+centos      1858  0.0  0.2   7572  4344 pts/0    Ss   15:27   0:00 -bash
+root        1897  0.0  0.5  22356  9172 ?        Ss   15:29   0:00 /usr/lib/systemd/systemd-journald
+centos      1906  0.0  0.2  10140  3652 pts/0    R+   15:30   0:00 ps -axu
+[centos@vbox ~]$ ps -axu head -n 5
+error: must set personality to get -x option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+[centos@vbox ~]$ ps -axu --sort pmeme | head -n 5
+error: must set personality to get -x option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+[centos@vbox ~]$ ps -axu --sort pmeme | tails -n 5
+-bash: tails: command not found
+error: must set personality to get -x option
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+[centos@vbox ~]$ top
+top - 15:32:16 up 42 min,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 126 total,   1 running, 125 sleeping,   0 stopped,   0 zombie
+%Cpu(s):   0.0/0.3     0[                                                                                                   ]
+MiB Mem : 19.6/1778.0   [|||||||||||||||||||                                                                                ]
+MiB Swap:  0.0/2048.0   [                                                                                                   ]
+Send pid 1857 signal [15/sigterm] 15Connection to localhost closed by remote host.
+Connection to localhost closed.T    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+PS C:\Users\LibaanH(AZ-NAT2)> ssh centos@localhost 0.2   0.4   0:00.56 sshd
+centos@localhost's password: 612   4132   3464 R   0.2   0.2   0:00.12 top
+Last login: Wed Jan 22 15:27:20 2025 from 10.0.2.2 0.0   0.8   0:00.09 systemd
+[centos@vbox ~]$ top   0  173544   6056      0 S   0.0   0.3   0:00.00 (sd-pam)
+   1858 centos    20   0    7572   4344   3620 S   0.0   0.2   0:00.06 bash
+top - 15:33:00 up 43 min,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 130 total,   1 running, 129 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  3.2 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   1447.3 avail Mem
+
+top - 15:33:16 up 43 min,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 129 total,   2 running, 127 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   1447.3 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1924 centos    20   0   22272  13640  10500 S   0.0   0.7   0:00.14 systemd
+   1926 centos    20   0  173544   6056      0 S   0.0   0.3   0:00.00 (sd-pam)
+   1933 centos    20   0   19016   7180   5292 S   0.0   0.4   0:00.02 sshd
+   1934 centos    20   0    7572   4324   3668 S   0.0   0.2   0:00.02 bash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1]+  Stopped                 top
+[centos@vbox ~]$ top
+top - 15:34:00 up 44 min,  1 user,  load average: 0.04, 0.01, 0.00
+Tasks: 130 total,   2 running, 127 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+top - 15:34:16 up 44 min,  1 user,  load average: 0.03, 0.01, 0.00
+Tasks: 129 total,   1 running, 128 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   1447.3 avail Mem
+Send pid 1953 signal [15/sigterm]
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1953 centos    20   0   10612   4144   3476 R   0.0   0.2   0:00.06 top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[centos@vbox ~]$ fg
+-bash: fg: current: no such job
+[centos@vbox ~]$ top
+top - 15:34:30 up 45 min,  1 user,  load average: 0.02, 0.01, 0.00
+Tasks: 129 total,   1 running, 128 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  3.2 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   1447.3 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  172356  16748  10816 S   0.0   0.9   0:03.05 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.03 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:1H-kblockd
+     11 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthre
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.13 ksoftirqd/0
+     17 root      20   0       0      0      0 I   0.0   0.0   0:01.78 rcu_preempt
+     18 root      rt   0       0      0      0 S   0.0   0.0   0:00.10 migration/0
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     21 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     22 root      rt   0       0      0      0 S   0.0   0.0   0:00.32 migration/1
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.22 ksoftirqd/1
+     25 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
+     27 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kdevtmpfs
+     28 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 inet_frag_wq
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kauditd
+     30 root      20   0       0      0      0 S   0.0   0.0   0:00.09 khungtaskd
+     32 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     33 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 writeback
+     34 root      20   0       0      0      0 S   0.0   0.0   0:00.36 kcompactd0
+     35 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd
+     36 root      39  19       0      0      0 S   0.0   0.0   0:00.25 khugepaged
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 cryptd
+     38 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kintegrityd
+     39 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kblockd
+     40 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 blkcg_punt_bio
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 tpm_dev_wq
+     42 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 md
+     43 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 edac-poller
+     44 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 watchdogd
+     45 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kswapd0
+     46 root      20   0       0      0      0 I   0.0   0.0   0:00.80 kworker/1:1-cgroup_destroy
+     52 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kthrotld
+     56 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 acpi_thermal_pm
+     57 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kmpath_rdacd
+     58 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kaluad
+     59 root       0 -20       0      0      0 I   0.0   0.0   0:00.42 kworker/1:1H-events_highpri
+     60 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mld
+     61 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 ipv6_addrconf
+     62 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kstrp
+     74 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 zswap-shrink
+    186 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/u5:0
+    376 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 ata_sff
+    380 root      20   0       0      0      0 S   0.0   0.0   0:00.02 scsi_eh_0
+    381 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 scsi_tmf_0
+    383 root      20   0       0      0      0 S   0.0   0.0   0:00.02 scsi_eh_1
+    384 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 scsi_tmf_1
+top - 15:34:59 up 45 min,  1 user,  load average: 0.01, 0.01, 0.00
+Tasks: 129 total,   1 running, 128 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.3 sy,  0.0 ni, 99.4 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st
+MiB Mem :   1778.0 total,   1395.0 free,    330.7 used,    200.8 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   1447.3 avail Mem
+Send pid 1933 signal [15/sigterm] 15Connection to localhost closed by remote host.
+Connection to localhost closed.T    RES    SHR S  %MEM     TIME+ COMMAND
+PS C:\Users\LibaanH(AZ-NAT2)> ssh centos@localhost 0.4   0:00.26 sshd
+centos@localhost's password: 272  13640  10500 S   0.7   0:00.14 systemd
+Last login: Wed Jan 22 15:32:36 2025 from 10.0.2.2 0.3   0:00.00 (sd-pam)
+[centos@vbox ~]$ sudo su - root2   4384   3668 S   0.2   0:00.02 bash
+Last login: Wed Jan 22 15:26:12 GMT 2025 on pts/0  0.2   0:00.05 top
+[root@vbox ~]# journalctl
+Jan 22 14:49:26 localhost kernel: Linux version 5.14.0-267.el9.x86_64 (mockbuild@x86-05.stream.rdu2.redhat.com) (gcc (GCC) 11>
+Jan 22 14:49:26 localhost kernel: The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be vi>
+Jan 22 14:49:26 localhost kernel: Linux version 5.14.0-267.el9.x86_64 (mockbuild@x86-05.stream.rdu2.redhat.com) (gcc (GCC) 11>
+Jan 22 14:49:26 localhost kernel: The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be vi>
+Jan 22 14:49:26 localhost kernel: Command line: BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.14.0-267.el9.x86_64 root=/dev/mapper/cs-roo>
+Jan 22 14:49:26 localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+Jan 22 14:49:26 localhost kernel: signal: max sigframe size: 1440
+Jan 22 14:49:26 localhost kernel: BIOS-provided physical RAM map:
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x000000007ffeffff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000007fff0000-0x000000007fffffff] ACPI data
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Jan 22 14:49:26 localhost kernel: NX (Execute Disable) protection: active
+Jan 22 14:49:26 localhost kernel: SMBIOS 2.5 present.
+Jan 22 14:49:26 localhost kernel: DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Jan 22 14:49:26 localhost kernel: Hypervisor detected: KVM
+Jan 22 14:49:26 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Jan 22 14:49:26 localhost kernel: kvm-clock: using sched offset of 167350502761833 cycles
+Jan 22 14:49:26 localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 88>
+Jan 22 14:49:26 localhost kernel: tsc: Detected 2611.202 MHz processor
+Jan 22 14:49:26 localhost kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Jan 22 14:49:26 localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+Jan 22 14:49:26 localhost kernel: last_pfn = 0x7fff0 max_arch_pfn = 0x400000000
+Jan 22 14:49:26 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT
+Jan 22 14:49:26 localhost kernel: CPU MTRRs all blank - virtualized system.
+Jan 22 14:49:26 localhost kernel: found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+Jan 22 14:49:26 localhost kernel: RAMDISK: [mem 0x33a8d000-0x35d3efff]
+Jan 22 14:49:26 localhost kernel: ACPI: Early table checksum verification disabled
+Jan 22 14:49:26 localhost kernel: ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+Jan 22 14:49:26 localhost kernel: ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: DSDT 0x000000007FFF0610 002353 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: APIC 0x000000007FFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: SSDT 0x000000007FFF02A0 00036C (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACP table memory at [mem 0x7fff00f0-0x7fff01e3]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0x7fff0610-0x7fff2962]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving APIC table memory at [mem 0x7fff0240-0x7fff029b]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0x7fff02a0-0x7fff060b]
+Jan 22 14:49:26 localhost kernel: No NUMA configuration found
+Jan 22 14:49:26 localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: NODE_DATA(0) allocated [mem 0x7ffc5000-0x7ffeffff]
+Jan 22 14:49:26 localhost kernel: Reserving 192MB of memory at 1696MB for crashkernel (System RAM: 2047MB)
+Jan 22 14:49:26 localhost kernel: Zone ranges:
+Jan 22 14:49:26 localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Jan 22 14:49:26 localhost kernel:   DMA32    [mem 0x0000000001000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel:   Normal   empty
+Jan 22 14:49:26 localhost kernel:   Device   empty
+Jan 22 14:49:26 localhost kernel: Movable zone start for each node
+Jan 22 14:49:26 localhost kernel: Early memory node ranges
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000100000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+...skipping...
+Jan 22 14:49:26 localhost kernel: Linux version 5.14.0-267.el9.x86_64 (mockbuild@x86-05.stream.rdu2.redhat.com) (gcc (GCC) 11>
+Jan 22 14:49:26 localhost kernel: The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be vi>
+Jan 22 14:49:26 localhost kernel: Linux version 5.14.0-267.el9.x86_64 (mockbuild@x86-05.stream.rdu2.redhat.com) (gcc (GCC) 11>
+Jan 22 14:49:26 localhost kernel: The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be vi>
+Jan 22 14:49:26 localhost kernel: Command line: BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.14.0-267.el9.x86_64 root=/dev/mapper/cs-roo>
+Jan 22 14:49:26 localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+Jan 22 14:49:26 localhost kernel: signal: max sigframe size: 1440
+Jan 22 14:49:26 localhost kernel: BIOS-provided physical RAM map:
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x000000007ffeffff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000007fff0000-0x000000007fffffff] ACPI data
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Jan 22 14:49:26 localhost kernel: NX (Execute Disable) protection: active
+Jan 22 14:49:26 localhost kernel: SMBIOS 2.5 present.
+Jan 22 14:49:26 localhost kernel: DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Jan 22 14:49:26 localhost kernel: Hypervisor detected: KVM
+Jan 22 14:49:26 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Jan 22 14:49:26 localhost kernel: kvm-clock: using sched offset of 167350502761833 cycles
+Jan 22 14:49:26 localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 88>
+Jan 22 14:49:26 localhost kernel: tsc: Detected 2611.202 MHz processor
+Jan 22 14:49:26 localhost kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Jan 22 14:49:26 localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+Jan 22 14:49:26 localhost kernel: last_pfn = 0x7fff0 max_arch_pfn = 0x400000000
+Jan 22 14:49:26 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT
+Jan 22 14:49:26 localhost kernel: CPU MTRRs all blank - virtualized system.
+Jan 22 14:49:26 localhost kernel: found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+Jan 22 14:49:26 localhost kernel: RAMDISK: [mem 0x33a8d000-0x35d3efff]
+Jan 22 14:49:26 localhost kernel: ACPI: Early table checksum verification disabled
+Jan 22 14:49:26 localhost kernel: ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+Jan 22 14:49:26 localhost kernel: ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: DSDT 0x000000007FFF0610 002353 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: APIC 0x000000007FFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: SSDT 0x000000007FFF02A0 00036C (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACP table memory at [mem 0x7fff00f0-0x7fff01e3]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0x7fff0610-0x7fff2962]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving APIC table memory at [mem 0x7fff0240-0x7fff029b]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0x7fff02a0-0x7fff060b]
+Jan 22 14:49:26 localhost kernel: No NUMA configuration found
+Jan 22 14:49:26 localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: NODE_DATA(0) allocated [mem 0x7ffc5000-0x7ffeffff]
+Jan 22 14:49:26 localhost kernel: Reserving 192MB of memory at 1696MB for crashkernel (System RAM: 2047MB)
+Jan 22 14:49:26 localhost kernel: Zone ranges:
+Jan 22 14:49:26 localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Jan 22 14:49:26 localhost kernel:   DMA32    [mem 0x0000000001000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel:   Normal   empty
+Jan 22 14:49:26 localhost kernel:   Device   empty
+Jan 22 14:49:26 localhost kernel: Movable zone start for each node
+Jan 22 14:49:26 localhost kernel: Early memory node ranges
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000100000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA: 97 pages in unavailable ranges
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA32: 16 pages in unavailable ranges
+Jan 22 14:49:26 localhost kernel: ACPI: PM-Timer IO Port: 0x4008
+Jan 22 14:49:26 localhost kernel: IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+Jan 22 14:49:26 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Jan 22 14:49:26 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+Jan 22 14:49:26 localhost kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+Jan 22 14:49:26 localhost kernel: smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+Jan 22 14:49:26 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Jan 22 14:49:26 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+Jan 22 14:49:26 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+Jan 22 14:49:26 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+Jan 22 14:49:26 localhost kernel: [mem 0x80000000-0xfebfffff] available for PCI devices
+Jan 22 14:49:26 localhost kernel: Booting paravirtualized kernel on KVM
+Jan 22 14:49:26 localhost kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969>
+Jan 22 14:49:26 localhost kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+Jan 22 14:49:26 localhost kernel: percpu: Embedded 55 pages/cpu s188416 r8192 d28672 u1048576
+Jan 22 14:49:26 localhost kernel: pcpu-alloc: s188416 r8192 d28672 u1048576 alloc=1*2097152
+Jan 22 14:49:26 localhost kernel: pcpu-alloc: [0] 0 1
+Jan 22 14:49:26 localhost kernel: kvm-guest: PV spinlocks enabled
+Jan 22 14:49:26 localhost kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+Jan 22 14:49:26 localhost kernel: Fallback order for Node 0: 0
+Jan 22 14:49:26 localhost kernel: Built 1 zonelists, mobility grouping on.  Total pages: 515824
+Jan 22 14:49:26 localhost kernel: Policy zone: DMA32
+Jan 22 14:49:26 localhost kernel: Kernel command line: BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.14.0-267.el9.x86_64 root=/dev/mapper>
+Jan 22 14:49:26 localhost kernel: Unknown kernel command line parameters "BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.14.0-267.el9.x86_>
+Jan 22 14:49:26 localhost kernel: Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+Jan 22 14:49:26 localhost kernel: Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Jan 22 14:49:26 localhost kernel: mem auto-init: stack:off, heap alloc:off, heap free:off
+Jan 22 14:49:26 localhost kernel: Memory: 260860K/2096696K available (14342K kernel code, 5536K rwdata, 10176K rodata, 2792K >
+Jan 22 14:49:26 localhost kernel: random: get_random_u64 called from kmem_cache_open+0x1e/0x210 with crng_init=0
+Jan 22 14:49:26 localhost kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+Jan 22 14:49:26 localhost kernel: ftrace: allocating 44783 entries in 175 pages
+Jan 22 14:49:26 localhost kernel: ftrace: allocated 175 pages with 6 groups
+Jan 22 14:49:26 localhost kernel: Dynamic Preempt: voluntary
+Jan 22 14:49:26 localhost kernel: rcu: Preemptible hierarchical RCU implementation.
+Jan 22 14:49:26 localhost kernel: rcu:         RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+Jan 22 14:49:26 localhost kernel:         Trampoline variant of Tasks RCU enabled.
+Jan 22 14:49:26 localhost kernel:         Rude variant of Tasks RCU enabled.
+Jan 22 14:49:26 localhost kernel:         Tracing variant of Tasks RCU enabled.
+Jan 22 14:49:26 localhost kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+Jan 22 14:49:26 localhost kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+Jan 22 14:49:26 localhost kernel: NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+Jan 22 14:49:26 localhost kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+Jan 22 14:49:26 localhost kernel: kfence: initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrv>
+Jan 22 14:49:26 localhost kernel: random: crng init done (trusting CPU's manufacturer)
+Jan 22 14:49:26 localhost kernel: Console: colour VGA+ 80x25
+Jan 22 14:49:26 localhost kernel: printk: console [tty0] enabled
+Jan 22 14:49:26 localhost kernel: ACPI: Core revision 20211217
+Jan 22 14:49:26 localhost kernel: APIC: Switch to symmetric I/O mode setup
+Jan 22 14:49:26 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Jan 22 14:49:26 localhost kernel: clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x25a3923457a, max_idle_ns: 44>
+Jan 22 14:49:26 localhost kernel: Calibrating delay loop (skipped) preset value.. 5222.40 BogoMIPS (lpj=2611202)
+Jan 22 14:49:26 localhost kernel: pid_max: default: 32768 minimum: 301
+Jan 22 14:49:26 localhost kernel: LSM: Security Framework initializing
+Jan 22 14:49:26 localhost kernel: Yama: becoming mindful.
+Jan 22 14:49:26 localhost kernel: SELinux:  Initializing.
+Jan 22 14:49:26 localhost kernel: LSM support for eBPF active
+Jan 22 14:49:26 localhost kernel: Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+Jan 22 14:49:26 localhost kernel: Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+Jan 22 14:49:26 localhost kernel: Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Jan 22 14:49:26 localhost kernel: Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Jan 22 14:49:26 localhost kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Jan 22 14:49:26 localhost kernel: Spectre V2 : Mitigation: Enhanced IBRS
+Jan 22 14:49:26 localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Jan 22 14:49:26 localhost kernel: Spectre V2 : Spectre v2 / PBRSB-eIBRS: Retire a single CALL on VMEXIT
+Jan 22 14:49:26 localhost kernel: RETBleed: Mitigation: Enhanced IBRS
+Jan 22 14:49:26 localhost kernel: Speculative Store Bypass: Vulnerable
+Jan 22 14:49:26 localhost kernel: Freeing SMP alternatives memory: 36K
+Jan 22 14:49:26 localhost kernel: APIC calibration not consistent with PM-Timer: 101ms instead of 100ms
+Jan 22 14:49:26 localhost kernel: APIC delta adjusted to PM-Timer: 6249409 (6319978)
+Jan 22 14:49:26 localhost kernel: smpboot: CPU0: 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz (family: 0x6, model: 0x8c, st>
+Jan 22 14:49:26 localhost kernel: cblist_init_generic: Setting adjustable number of callback queues.
+Jan 22 14:49:26 localhost kernel: cblist_init_generic: Setting shift to 1 and lim to 1.
+Jan 22 14:49:26 localhost kernel: cblist_init_generic: Setting shift to 1 and lim to 1.
+Jan 22 14:49:26 localhost kernel: cblist_init_generic: Setting shift to 1 and lim to 1.
+Jan 22 14:49:26 localhost kernel: Performance Events: unsupported p6 CPU model 140 no PMU driver, software events only.
+Jan 22 14:49:26 localhost kernel: rcu: Hierarchical SRCU implementation.
+Jan 22 14:49:26 localhost kernel: rcu:         Max phase no-delay instances is 400.
+Jan 22 14:49:26 localhost kernel: NMI watchdog: Perf NMI watchdog permanently disabled
+Jan 22 14:49:26 localhost kernel: smp: Bringing up secondary CPUs ...
+Jan 22 14:49:26 localhost kernel: x86: Booting SMP configuration:
+Jan 22 14:49:26 localhost kernel: .... node  #0, CPUs:      #1
+Jan 22 14:49:26 localhost kernel: TSC synchronization [CPU#0 -> CPU#1]:
+Jan 22 14:49:26 localhost kernel: Measured 65684 cycles TSC warp between CPUs, turning off TSC clock.
+Jan 22 14:49:26 localhost kernel: tsc: Marking TSC unstable due to check_tsc_sync_source failed
+Jan 22 14:49:26 localhost kernel: smp: Brought up 1 node, 2 CPUs
+Jan 22 14:49:26 localhost kernel: smpboot: Max logical packages: 1
+Jan 22 14:49:26 localhost kernel: smpboot: Total of 2 processors activated (10444.80 BogoMIPS)
+Jan 22 14:49:26 localhost kernel: node 0 deferred pages initialised in 1ms
+Jan 22 14:49:26 localhost kernel: devtmpfs: initialized
+Jan 22 14:49:26 localhost kernel: x86/mm: Memory block size: 128MB
+Jan 22 14:49:26 localhost kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 191126044627500>
+Jan 22 14:49:26 localhost kernel: futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+Jan 22 14:49:26 localhost kernel: pinctrl core: initialized pinctrl subsystem
+Jan 22 14:49:26 localhost kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+Jan 22 14:49:26 localhost kernel: DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+Jan 22 14:49:26 localhost kernel: DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+Jan 22 14:49:26 localhost kernel: DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+Jan 22 14:49:26 localhost kernel: audit: initializing netlink subsys (disabled)
+Jan 22 14:49:26 localhost kernel: audit: type=2000 audit(1737724713.512:1): state=initialized audit_enabled=0 res=1
+Jan 22 14:49:26 localhost kernel: thermal_sys: Registered thermal governor 'fair_share'
+Jan 22 14:49:26 localhost kernel: thermal_sys: Registered thermal governor 'step_wise'
+Jan 22 14:49:26 localhost kernel: thermal_sys: Registered thermal governor 'user_space'
+Jan 22 14:49:26 localhost kernel: cpuidle: using governor menu
+Jan 22 14:49:26 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Jan 22 14:49:26 localhost kernel: PCI: Using configuration type 1 for base access
+Jan 22 14:49:26 localhost kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+Jan 22 14:49:26 localhost kernel: HugeTLB: can optimize 7 vmemmap pages for hugepages-2048kB
+Jan 22 14:49:26 localhost kernel: HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Jan 22 14:49:26 localhost kernel: cryptd: max_cpu_qlen set to 1000
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Module Device)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Processor Device)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Processor Aggregator Device)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Linux-Dell-Video)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+Jan 22 14:49:26 localhost kernel: ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+Jan 22 14:49:26 localhost kernel: ACPI: 2 ACPI AML tables successfully acquired and loaded
+Jan 22 14:49:26 localhost kernel: ACPI: Interpreter enabled
+Jan 22 14:49:26 localhost kernel: ACPI: PM: (supports S0 S5)
+Jan 22 14:49:26 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+Jan 22 14:49:26 localhost kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Jan 22 14:49:26 localhost kernel: PCI: Using E820 reservations for host bridge windows
+Jan 22 14:49:26 localhost kernel: ACPI: Enabled 2 GPEs in block 00 to 07
+Jan 22 14:49:26 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Jan 22 14:49:26 localhost kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+Jan 22 14:49:26 localhost kernel: acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM >
+Jan 22 14:49:26 localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration >
+Jan 22 14:49:26 localhost kernel: PCI host bridge to bus 0000:00
+Jan 22 14:49:26 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Jan 22 14:49:26 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Jan 22 14:49:26 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Jan 22 14:49:26 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x80000000-0xfdffffff window]
+Jan 22 14:49:26 localhost kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: reg 0x10: [io  0xd010-0xd01f]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: reg 0x14: [mem 0xe0000000-0xe0ffffff pref]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: reg 0x18: [mem 0xf0000000-0xf01fffff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+Jan 22 14:49:26 localhost kernel: pci 0000:00:03.0: reg 0x10: [mem 0xf0200000-0xf021ffff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:03.0: reg 0x18: [io  0xd020-0xd027]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+Jan 22 14:49:26 localhost kernel: pci 0000:00:04.0: reg 0x10: [io  0xd040-0xd05f]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+Jan 22 14:49:26 localhost kernel: pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310
+Jan 22 14:49:26 localhost kernel: pci 0000:00:06.0: reg 0x10: [mem 0xf0804000-0xf0804fff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+Jan 22 14:49:26 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+Jan 22 14:49:26 localhost kernel: pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0b.0: [8086:265c] type 00 class 0x0c0320
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0b.0: reg 0x10: [mem 0xf0805000-0xf0805fff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x14: [io  0xd248-0xd24b]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x1c: [io  0xd258-0xd25b]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:0d.0: reg 0x24: [mem 0xf0806000-0xf0807fff]
+Jan 22 14:49:26 localhost kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 11
+Jan 22 14:49:26 localhost kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+Jan 22 14:49:26 localhost kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 9
+Jan 22 14:49:26 localhost kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+Jan 22 14:49:26 localhost kernel: iommu: Default domain type: Translated
+Jan 22 14:49:26 localhost kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+Jan 22 14:49:26 localhost kernel: SCSI subsystem initialized
+Jan 22 14:49:26 localhost kernel: ACPI: bus type USB registered
+Jan 22 14:49:26 localhost kernel: usbcore: registered new interface driver usbfs
+Jan 22 14:49:26 localhost kernel: usbcore: registered new interface driver hub
+Jan 22 14:49:26 localhost kernel: usbcore: registered new device driver usb
+Jan 22 14:49:26 localhost kernel: pps_core: LinuxPPS API ver. 1 registered
+Jan 22 14:49:26 localhost kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Jan 22 14:49:26 localhost kernel: PTP clock support registered
+Jan 22 14:49:26 localhost kernel: EDAC MC: Ver: 3.0.0
+Jan 22 14:49:26 localhost kernel: NetLabel: Initializing
+Jan 22 14:49:26 localhost kernel: NetLabel:  domain hash size = 128
+Jan 22 14:49:26 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Jan 22 14:49:26 localhost kernel: NetLabel:  unlabeled traffic allowed by default
+Jan 22 14:49:26 localhost kernel: PCI: Using ACPI for IRQ routing
+Jan 22 14:49:26 localhost kernel: PCI: pci_cache_line_size set to 64 bytes
+Jan 22 14:49:26 localhost kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+Jan 22 14:49:26 localhost kernel: e820: reserve RAM buffer [mem 0x7fff0000-0x7fffffff]
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+Jan 22 14:49:26 localhost kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[root@vbox ~]# jorunalctl -p err
+-bash: jorunalctl: command not found
+[root@vbox ~]# journalctl -p err
+Jan 22 14:49:26 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:27 localhost kernel: Warning: Unmaintained hardware is detected:  e1000:100E:8086 @ 0000:00:03.0
+Jan 22 14:49:31 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:31 localhost kernel: [drm:vmw_host_printf [vmwgfx]] *ERROR* Failed to send host log message.
+[root@vbox ~]# sudo journalctl -p err
+Jan 22 14:49:26 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:27 localhost kernel: Warning: Unmaintained hardware is detected:  e1000:100E:8086 @ 0000:00:03.0
+Jan 22 14:49:31 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:31 localhost kernel: [drm:vmw_host_printf [vmwgfx]] *ERROR* Failed to send host log message.
+[root@vbox ~]# sudo journalctl -p warning
+Jan 22 14:49:26 localhost kernel: APIC calibration not consistent with PM-Timer: 101ms instead of 100ms
+Jan 22 14:49:26 localhost kernel: TSC synchronization [CPU#0 -> CPU#1]:
+Jan 22 14:49:26 localhost kernel: Measured 65684 cycles TSC warp between CPUs, turning off TSC clock.
+Jan 22 14:49:26 localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration >
+Jan 22 14:49:26 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:26 localhost kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will>
+Jan 22 14:49:27 localhost kernel: Warning: Unmaintained hardware is detected:  e1000:100E:8086 @ 0000:00:03.0
+Jan 22 14:49:31 localhost systemd[1]: Invalid DMI field header.
+Jan 22 14:49:31 localhost lvm[621]: /dev/sda2 excluded: device is not in devices file.
+Jan 22 14:49:31 localhost lvm[621]: WARNING: no autoactivation for /dev/sda2: system.devices t10.ATA_VBOX_HARDDISK_VB42ac9a1b>
+Jan 22 14:49:31 localhost kernel: [drm:vmw_host_printf [vmwgfx]] *ERROR* Failed to send host log message.
+Jan 22 14:49:38 vbox chronyd[696]: System clock wrong by -1.554506 seconds
+Jan 22 14:49:37 vbox chronyd[696]: System clock was stepped by -1.554506 seconds
+[root@vbox ~]# sudo journalctl -p 4..6
+Jan 22 14:49:26 localhost kernel: Linux version 5.14.0-267.el9.x86_64 (mockbuild@x86-05.stream.rdu2.redhat.com) (gcc (GCC) 11>
+Jan 22 14:49:26 localhost kernel: The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be vi>
+Jan 22 14:49:26 localhost kernel: Command line: BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.14.0-267.el9.x86_64 root=/dev/mapper/cs-roo>
+Jan 22 14:49:26 localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+Jan 22 14:49:26 localhost kernel: signal: max sigframe size: 1440
+Jan 22 14:49:26 localhost kernel: BIOS-provided physical RAM map:
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x000000007ffeffff] usable
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x000000007fff0000-0x000000007fffffff] ACPI data
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+Jan 22 14:49:26 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Jan 22 14:49:26 localhost kernel: NX (Execute Disable) protection: active
+Jan 22 14:49:26 localhost kernel: SMBIOS 2.5 present.
+Jan 22 14:49:26 localhost kernel: DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Jan 22 14:49:26 localhost kernel: Hypervisor detected: KVM
+Jan 22 14:49:26 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Jan 22 14:49:26 localhost kernel: kvm-clock: using sched offset of 167350502761833 cycles
+Jan 22 14:49:26 localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 88>
+Jan 22 14:49:26 localhost kernel: tsc: Detected 2611.202 MHz processor
+Jan 22 14:49:26 localhost kernel: last_pfn = 0x7fff0 max_arch_pfn = 0x400000000
+Jan 22 14:49:26 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT
+Jan 22 14:49:26 localhost kernel: CPU MTRRs all blank - virtualized system.
+Jan 22 14:49:26 localhost kernel: found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+Jan 22 14:49:26 localhost kernel: RAMDISK: [mem 0x33a8d000-0x35d3efff]
+Jan 22 14:49:26 localhost kernel: ACPI: Early table checksum verification disabled
+Jan 22 14:49:26 localhost kernel: ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+Jan 22 14:49:26 localhost kernel: ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: DSDT 0x000000007FFF0610 002353 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: FACS 0x000000007FFF0200 000040
+Jan 22 14:49:26 localhost kernel: ACPI: APIC 0x000000007FFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+Jan 22 14:49:26 localhost kernel: ACPI: SSDT 0x000000007FFF02A0 00036C (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACP table memory at [mem 0x7fff00f0-0x7fff01e3]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0x7fff0610-0x7fff2962]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving APIC table memory at [mem 0x7fff0240-0x7fff029b]
+Jan 22 14:49:26 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0x7fff02a0-0x7fff060b]
+Jan 22 14:49:26 localhost kernel: No NUMA configuration found
+Jan 22 14:49:26 localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: NODE_DATA(0) allocated [mem 0x7ffc5000-0x7ffeffff]
+Jan 22 14:49:26 localhost kernel: Reserving 192MB of memory at 1696MB for crashkernel (System RAM: 2047MB)
+Jan 22 14:49:26 localhost kernel: Zone ranges:
+Jan 22 14:49:26 localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Jan 22 14:49:26 localhost kernel:   DMA32    [mem 0x0000000001000000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel:   Normal   empty
+Jan 22 14:49:26 localhost kernel:   Device   empty
+Jan 22 14:49:26 localhost kernel: Movable zone start for each node
+Jan 22 14:49:26 localhost kernel: Early memory node ranges
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Jan 22 14:49:26 localhost kernel:   node   0: [mem 0x0000000000100000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000007ffeffff]
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA: 97 pages in unavailable ranges
+Jan 22 14:49:26 localhost kernel: On node 0, zone DMA32: 16 pages in unavailable ranges
+[root@vbox ~]# sudo nano /etc/systemd/journald.conf
+[root@vbox ~]# [root@vbox ~]# sudo /storage
+sudo: /storage: command not found
+[root@vbox ~]# /storage
+-bash: /storage: No such file or directory
+[root@vbox ~]# journald
+-bash: journald: command not found
+[root@vbox ~]# sudo nano /etc/systemd/journald.conf
+[root@vbox ~]# /storage
+-bash: /storage: No such file or directory
+[root@vbox ~]# sudo nano /etc/systemd/journald.conf
+[root@vbox ~]# sudo cd /var/log/
+[root@vbox ~]# cd /var/log/
+[root@vbox log]# ls
+anaconda       cron-20230510    hawkey.log           lastlog           messages-20230429  secure            spooler-20230510
+audit          cron-20230517    hawkey.log-20230314  maillog           messages-20230510  secure-20230429   spooler-20230517
+btmp           cron-20250120    hawkey.log-20230429  maillog-20230429  messages-20230517  secure-20230510   spooler-20250120
+btmp-20250120  dnf.librepo.log  hawkey.log-20230518  maillog-20230510  messages-20250120  secure-20230517   sssd
+chrony         dnf.log          hawkey.log-20250120  maillog-20230517  php-fpm            secure-20250120   tallylog
+cron           dnf.rpm.log      httpd                maillog-20250120  private            spooler           wtmp
+cron-20230429  firewalld        kdump.log            messages          README             spooler-20230429
+[root@vbox log]# ls | grep journal
+[root@vbox log]# pushd /run/log
+/run/log /var/log
+[root@vbox log]# ls | grep journa
+journal
+[root@vbox log]# ls | grep journal
+journal
+[root@vbox log]# popd
+/var/log
+[root@vbox log]# systemctl restart systemd-journald
+[root@vbox log]# ls | grep journal
+[root@vbox log]# ls | grep journal
+[root@vbox log]#
